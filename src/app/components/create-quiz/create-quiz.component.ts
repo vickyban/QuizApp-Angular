@@ -19,7 +19,13 @@ export class CreateQuizComponent implements OnInit {
     event.preventDefault();
     let author = event.target.querySelector("#author").value;
     let quizName = event.target.querySelector("#quiz").value;
-    this.quiz = new Quiz(author, quizName);
+    this.quiz = new Quiz(author, quizName, []);
     this.createMode = true;
+    console.log(this.quiz);
+  }
+
+  onNewQuestion(question) {
+    console.log("Add new question ", question);
+    this.quiz.questions.push(question);
   }
 }

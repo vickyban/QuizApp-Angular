@@ -1,5 +1,14 @@
-<form (submit)="onCreate($event)" )>
-  <input type="text" placeholder="Author" id="author">
-  <input type="text" placeholder="Quiz Name" id="quiz">
-  <input type="submit" placeholder="Create Quiz">
-</form>
+<div *ngIf="!createMode; then thenBlock; else elseBlock "></div>
+
+<ng-template #thenBlock>
+  <form (submit)="onCreate($event)">
+    <input type="text" placeholder="Author" id="author">
+    <input type="text" placeholder="Quiz Name" id="quiz">
+    <input type="submit" placeholder="Create Quiz">
+  </form>
+
+</ng-template>
+
+<ng-template #elseBlock>
+  <app-create-question (newQuestion)="onNewQuestion($event)"></app-create-question>
+</ng-template>

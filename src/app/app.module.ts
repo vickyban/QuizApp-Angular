@@ -11,17 +11,20 @@ import { CreateQuestionComponent } from './components/create-question/create-que
 @NgModule({
   declarations: [
     AppComponent,
-    CreateQuestionComponent
+    CreateQuestionComponent,
+    CreateQuizComponent,
+    TakeQuizComponent,
+    QuizInfoComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot([
       {
-        path: '/new',
+        path: 'new',
         component: CreateQuizComponent
       },
       {
-        path: '/take',
+        path: 'take',
         component: TakeQuizComponent
       },
       {

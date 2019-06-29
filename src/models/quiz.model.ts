@@ -2,8 +2,8 @@ import { Question } from './question.model';
 
 export class Quiz {
   constructor(
-    author?: string,
-    quizName?: string,
-    questions?: Question[],
+    public author?: string,
+    public quizName?: string,
+    public questions?: Question[],
   ) { }
 }

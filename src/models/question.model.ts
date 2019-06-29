@@ -1,3 +1,3 @@
 export class Question {
-  constructor(question?: string, answers?: string[], answer?: string) { }
+  constructor(public question?: string, public answers?: string[], public answer?: string) { }
 }
