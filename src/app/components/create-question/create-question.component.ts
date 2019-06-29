@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Question } from 'src/models/question.model';
 
 @Component({
@@ -33,8 +33,7 @@ export class CreateQuestionComponent implements OnInit {
       form.querySelector("#c4").value
     ]
     if (this.isValid(questionType, ...answers)) {
-      let question = new Question(questionType, answers, this.answer)
-
+      let question = new Question(questionType, answers, this.answer);
       this.newQuestion.emit(question);
 
     }
