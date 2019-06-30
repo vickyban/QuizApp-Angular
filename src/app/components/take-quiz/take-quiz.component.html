@@ -1,1 +1,17 @@
-<p>take-quiz works!</p>
+<div [ngSwitch]="status">
+  <div *ngSwitchCase="enumStatus.UploadQuiz">
+    <input type="file" name="Load Quiz" id="fileUpload" (change)="onUpload($event)">
+  </div>
+  <div *ngSwitchCase="enumStatus.UploadedQuiz">
+    <div>
+      <button (click)="onStartQuiz($event)">Start Quiz</button>
+    </div>
+    <div>Author: {{quiz.author}}</div>
+    <div>Quiz name: {{quiz.quizName}}</div>
+    <div>Questions: {{quiz.questions.length}}</div>
+  </div>
+
+  <div *ngSwitchCase="enumStatus.TakingQuiz">
+    <app-take-question [question]="curQuestion"></app-take-question>
+  </div>
+</div>
