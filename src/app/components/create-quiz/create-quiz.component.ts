@@ -13,7 +13,7 @@ export class CreateQuizComponent implements OnInit {
   status = AppStatus.None;
   statusEnum: typeof AppStatus = AppStatus;
   questionSize: number;
-  count: number = 0;
+  count: number = 1;
 
   constructor() { }
 
@@ -34,7 +34,7 @@ export class CreateQuizComponent implements OnInit {
     console.log("Add new question ", question);
     this.quiz.questions.push(question);
     this.count++;
-    if (this.count === this.questionSize) {
+    if (this.count > this.questionSize) {
       this.status = AppStatus.CreatedQuiz;
     }
 

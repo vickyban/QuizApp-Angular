@@ -8,6 +8,7 @@ import { Question } from 'src/models/question.model';
 })
 export class CreateQuestionComponent implements OnInit {
 
+  @Input() questionNo: number;
   @Output() newQuestion: EventEmitter<Question> = new EventEmitter();
 
   answer: string
@@ -35,7 +36,11 @@ export class CreateQuestionComponent implements OnInit {
     if (this.isValid(questionType, ...answers)) {
       let question = new Question(questionType, answers, this.answer);
       this.newQuestion.emit(question);
-
+      form.querySelector("#question").value = '';
+      form.querySelector("#c1").value = '';
+      form.querySelector("#c2").value = '';
+      form.querySelector("#c3").value = '';
+      form.querySelector("#c4").value = '';
     }
 
   }

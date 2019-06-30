@@ -9,24 +9,19 @@
   </div>
 
 
-  <app-create-question *ngSwitchCase="statusEnum.CreatingQuiz" (newQuestion)="onNewQuestion($event)">
+  <app-create-question *ngSwitchCase="statusEnum.CreatingQuiz" (newQuestion)="onNewQuestion($event)"
+    [questionNo]="count">
   </app-create-question>
 
-  <div *ngSwitchCase="statusEnum.CreatedQuiz">Added all questions</div>
+  <div *ngSwitchCase="statusEnum.CreatedQuiz">
+    <div *ngFor="let question of quiz.questions">
+      <div>
+        <h4>{{question.question}}</h4>
+        <ul *ngFor="let answer of question.answers; let i = index ">
+          <li>Choice {{i}}: {{answer}}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
 </div>
-
-<!-- <ng-template #thenBlock>
-  <form (submit)="onCreate($event)">
-    <input type="text" placeholder="Author" id="author">
-    <input type="text" placeholder="Quiz Name" id="quiz">
-    <input type="number" placeholder="number of questions" id="questionSize">
-    <input type="submit" placeholder="Create Quiz">
-  </form>
-
-</ng-template>
-
-<ng-template #elseBlock>
-
-  <app-create-question (newQuestion)="onNewQuestion($event)"></app-create-question>
-</ng-template>
- -->
