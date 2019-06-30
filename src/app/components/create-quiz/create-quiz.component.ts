@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Quiz } from 'src/models/quiz.model';
 import { AppStatus } from 'src/models/AppStatus';
+import { saveAs } from 'file-saver';
 
 
 @Component({
@@ -38,5 +39,10 @@ export class CreateQuizComponent implements OnInit {
       this.status = AppStatus.CreatedQuiz;
     }
 
+  }
+
+  onSaveQuiz(event) {
+    let file = new Blob([JSON.stringify(this.quiz)], { type: 'application/json' })
+    saveAs(file, 'helloworld.json');
   }
 }

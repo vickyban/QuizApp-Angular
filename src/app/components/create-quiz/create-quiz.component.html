@@ -15,13 +15,9 @@
 
   <div *ngSwitchCase="statusEnum.CreatedQuiz">
     <div *ngFor="let question of quiz.questions">
-      <div>
-        <h4>{{question.question}}</h4>
-        <ul *ngFor="let answer of question.answers; let i = index ">
-          <li>Choice {{i}}: {{answer}}</li>
-        </ul>
-      </div>
+      <app-display-question [question]="question"></app-display-question>
     </div>
+    <button (click)="onSaveQuiz($event)">Save Quiz</button>
   </div>
 
 </div>
