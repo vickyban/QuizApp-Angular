@@ -26,7 +26,7 @@ export class CreateQuizComponent implements OnInit {
     let author = event.target.querySelector("#author").value;
     let quizName = event.target.querySelector("#quiz").value;
     this.questionSize = parseInt(event.target.querySelector("#questionSize").value);
-    this.quiz = new Quiz(author, quizName, []);
+    this.quiz = new Quiz(author, quizName, [], this.questionSize);
     this.status = AppStatus.CreatingQuiz;
     console.log(this.quiz);
   }

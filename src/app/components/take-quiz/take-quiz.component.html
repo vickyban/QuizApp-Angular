@@ -12,6 +12,10 @@
   </div>
 
   <div *ngSwitchCase="enumStatus.TakingQuiz">
-    <app-take-question [question]="curQuestion"></app-take-question>
+    <app-take-question [question]="curQuestion" (toNextQuestion)="onNextQuestion($event)"></app-take-question>
+  </div>
+
+  <div *ngSwitchCase="enumStatus.CompletedQuiz">
+    <p>DOne quiz</p>
   </div>
 </div>

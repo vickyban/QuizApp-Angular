@@ -15,6 +15,7 @@ export class TakeQuizComponent implements OnInit {
   status = AppStatus.UploadQuiz;
   questionIndex = 0;
   curQuestion: Question;
+  userResult = [];
 
   constructor() { }
 
@@ -36,5 +37,15 @@ export class TakeQuizComponent implements OnInit {
   onStartQuiz(event) {
     this.status = AppStatus.TakingQuiz;
     this.curQuestion = this.quiz.questions[this.questionIndex];
+  }
+
+  onNextQuestion(result) {
+    this.userResult.push = result;
+    this.questionIndex++;
+    if (this.questionIndex < this.quiz.questionSize)
+      this.curQuestion = this.quiz.questions[this.questionIndex];
+    else {
+      this.status = AppStatus.CompletedQuiz;
+    }
   }
 }

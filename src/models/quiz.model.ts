@@ -5,5 +5,6 @@ export class Quiz {
     public author?: string,
     public quizName?: string,
     public questions?: Question[],
+    public questionSize?: number
   ) { }
 }

@@ -1,5 +1,7 @@
 <h3>{{question.question}}</h3>
-<div *ngFor="let answer of question.answers">
-  <input type="radio" name="answer">{{answer}}
+<div *ngFor="let answer of question.answers" class="answers">
+  <input type="radio" name="answer" value="{{answer}}">{{answer}}
 </div>
+<p *ngIf="result !== ''">{{message}}</p>
 <button (click)="onSubmitAnswer()">Submit Answer</button>
+<button (click)="onNextQuestion()">Next Question</button>
