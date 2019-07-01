@@ -1,0 +1,70 @@
+#create-question{
+  width: 100%;
+  position: relative;
+
+}
+
+#create-question .input-box{
+  position: relative;
+  width: 100%;
+  height: 40px;
+  box-sizing: border-box;
+}
+#create-question input[type="text"], #create-question input[type="number"]{
+  width: 70%;
+  float: left;
+  box-sizing: border-box;
+  border: none;
+  background: transparent;
+  border-bottom: 2px solid rgb(146, 146, 146);
+}
+#create-question #question, #create-question input[type="submit"]{
+  width: 100%;
+}
+
+#create-question input[type="submit"]{
+  border: none;
+  background-color: #2d54d4;
+  color: #f3f3f3;
+  font-weight: bold;
+  border-radius: 5px;
+  margin: 20px auto;
+  padding: 7px;
+}
+#create-question input[type="submit"]:hover{
+  background-color: #2e5cf3;
+}
+
+#create-question label{
+  position: relative;
+  cursor: pointer;
+  float: right;
+  width: 20%;
+  box-sizing: border-box;
+
+}
+
+#create-question label input[type="radio"]{
+  display: none;
+}
+
+#create-question label span{
+  position: relative;
+  display: inline-block;
+  padding: 5px;
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+  color: #f3f3f3;
+  border-radius: 4px;
+  background: #008eff;
+  box-sizing: border-box;
+  transition: all 0.5 ease 0.2s;
+}
+
+#create-question label input[type="radio"]:checked ~ span{
+  background: #e6326f;
+}
+input:focus{
+  outline: none;
+}

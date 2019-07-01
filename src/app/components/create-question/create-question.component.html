@@ -1,20 +1,35 @@
-<form (submit)="onAddQuestion($event)">
-  <input type="text" placeholder="Question" id="question">
-  <div id="choice1">
+<form (submit)="onAddQuestion($event)" id="create-question">
+  <h3>Create question</h3>
+  <div class="input-box">
+    <input type="text" placeholder="Question" id="question">
+  </div>
+  <div id="choice1" class="input-box">
     <input type="text" placeholder="Choice 1" #choice1 id="c1">
-    <input type="radio" (click)="onSelect(choice1.value)" name="answer">Correct
+    <label>
+      <input type="radio" (click)="onSelect(choice1.value)" name="answer">
+      <span class="yes">Correct</span>
+    </label>
   </div>
-  <div id=" choice2">
+  <div id=" choice2" class="input-box">
     <input type="text" placeholder="Choice 2" #choice2 id="c2">
-    <input type="radio" (click)="onSelect(choice2.value)" name="answer">Correct
+    <label>
+      <input type="radio" (click)="onSelect(choice2.value)" name="answer">
+      <span class="yes">Correct</span>
+    </label>
   </div>
-  <div id=" choice3">
+  <div id=" choice3" class="input-box">
     <input type="text" placeholder="Choice 3" #choice3 id="c3">
-    <input type="radio" (click)="onSelect(choice3.value)" name="answer">Correct
+    <label>
+      <input type="radio" (click)="onSelect(choice3.value)" name="answer">
+      <span class="yes">Correct</span>
+    </label>
   </div>
-  <div id=" choice4">
+  <div id=" choice4" class="input-box">
     <input type="text" placeholder="Choice 4" #choice4 id="c4">
-    <input type="radio" (click)="onSelect(choice4.value)" name="answer">Correct
+    <label>
+      <input type="radio" (click)="onSelect(choice4.value)" name="answer">
+      <span class="yes">Correct</span>
+    </label>
   </div>
 
   <input type="submit" value="Add Question {{questionNo}}">
