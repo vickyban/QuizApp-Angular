@@ -29,7 +29,7 @@
   font-weight: bold;
   border-radius: 5px;
   margin: 20px auto;
-  padding: 7px;
+  padding: 10px;
 }
 #create-question input[type="submit"]:hover{
   background-color: #2e5cf3;

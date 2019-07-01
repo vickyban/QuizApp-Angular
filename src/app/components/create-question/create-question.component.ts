@@ -8,7 +8,13 @@ import { Question } from 'src/models/question.model';
 })
 export class CreateQuestionComponent implements OnInit {
 
-  @Input() questionNo: number;
+  private _questionNo: number;
+  @Input() set questionNo(value: number) {
+    this._questionNo = value;
+    let radioBtn: any = document.querySelector("input[type='radio']:checked")
+    if (radioBtn != null)
+      radioBtn.checked = false;
+  }
   @Output() newQuestion: EventEmitter<Question> = new EventEmitter();
 
   answer: string
@@ -41,6 +47,9 @@ export class CreateQuestionComponent implements OnInit {
       form.querySelector("#c2").value = '';
       form.querySelector("#c3").value = '';
       form.querySelector("#c4").value = '';
+    }
+    else {
+
     }
 
   }

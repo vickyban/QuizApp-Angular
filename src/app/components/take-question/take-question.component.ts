@@ -10,30 +10,24 @@ import { QuestionResult } from 'src/models/QuestionResult.model';
 export class TakeQuestionComponent implements OnInit {
 
   @Input() question: Question;
+  @Input() questionNo: number;
   message: string = '';
   @Output() toNextQuestion: EventEmitter<QuestionResult> = new EventEmitter();
-  result: QuestionResult;
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  onSubmitAnswer() {
-    let selectedRadio: any = document.querySelector('.answers input[name="answer"]:checked');
-    let selectedAnswer = selectedRadio.value;
-    this.result = new QuestionResult(this.question, selectedAnswer);
-    if (this.question.answer === selectedAnswer) {
-      this.message = "correct answer" + this.question.answer;
-      this.result.correct = true;
-    } else {
-      this.message = "Correct question is " + this.question.answer;
-      this.result.correct = false;
-    }
-  }
-
   onNextQuestion() {
-    this.toNextQuestion.emit(this.result);
+    let selectedRadio: any = document.querySelector('.answers input[name="answer"]:checked');
+    if (selectedRadio != null) {
+      let selectedAnswer = selectedRadio.value;
+      let result = new QuestionResult(this.question, selectedAnswer);
+      result.correct = this.question.answer === selectedAnswer
+      this.toNextQuestion.emit(result);
+      selectedRadio.checked = false;
+    }
   }
 
 }

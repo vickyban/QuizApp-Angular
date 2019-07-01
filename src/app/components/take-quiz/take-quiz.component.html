@@ -1,18 +1,19 @@
-<div [ngSwitch]="status">
+<div [ngSwitch]="status" class="center">
   <div *ngSwitchCase="enumStatus.UploadQuiz">
     <input type="file" name="Load Quiz" id="fileUpload" (change)="onUpload($event)">
   </div>
   <div *ngSwitchCase="enumStatus.UploadedQuiz">
-    <div>
+    <div id="btn-start-quiz">
       <button (click)="onStartQuiz($event)">Start Quiz</button>
     </div>
-    <div>Author: {{quiz.author}}</div>
-    <div>Quiz name: {{quiz.quizName}}</div>
-    <div>Questions: {{quiz.questions.length}}</div>
+    <div class="div-quiz-info"><strong>Author:</strong> {{quiz.author}}</div>
+    <div class="div-quiz-info"><strong>Quiz name:</strong> {{quiz.quizName}}</div>
+    <div class="div-quiz-info"><strong>Questions:</strong> {{quiz.questions.length}}</div>
   </div>
 
   <div *ngSwitchCase="enumStatus.TakingQuiz">
-    <app-take-question [question]="curQuestion" (toNextQuestion)="onNextQuestion($event)"></app-take-question>
+    <app-take-question [question]="curQuestion" [questionNo]="questionIndex" (toNextQuestion)="onNextQuestion($event)">
+    </app-take-question>
   </div>
 
   <div *ngSwitchCase="enumStatus.CompletedQuiz">

@@ -1,0 +1,20 @@
+h3{
+  margin: 5px 0;
+
+}
+h4{
+  margin: 6px 0;
+  border-bottom: 2px solid #c6bfbf;
+  padding-bottom: 5px;
+}
+button{
+  border-radius: 6px;
+    border: none;
+    padding: 8px;
+    background: #2d54d4;
+    color: #fff;
+    font-weight: bold;
+}
+button:hover{
+  background-color: #2e5cf3;
+}

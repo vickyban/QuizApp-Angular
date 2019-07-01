@@ -1,0 +1,18 @@
+#btn-start-quiz{
+  border-bottom: 2px solid #c6bfbf;
+  padding: 6px;
+}
+#btn-start-quiz button{
+  border-radius: 5px;
+  padding: 5px;
+  color: #fff;
+  font-weight: bold;
+  background: #2d54d4;
+  border: none;
+}
+#btn-start-quiz button:hover{
+  background-color: #2e5cf3;
+}
+.div-quiz-info{
+  margin: 10px;
+}
