@@ -1,0 +1,37 @@
+*{
+  margin:0;
+  padding: 0;
+}
+header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 10%;
+  background: #24252a;
+  margin-bottom: 10px;
+}
+
+#header-nav li, #header-nav a{
+  font-weight: 500;
+  font-size: 16px;
+  color: #edf0f1;
+  text-decoration: none;
+}
+img.logo{
+  height: 70px;
+}
+
+#header-nav{
+  list-style: none;
+}
+
+#header-nav li{
+  display: inline-block;
+  padding: 0px 20px;
+}
+#header-nav li a {
+  transition: all 0.3 ease 0s;
+}
+#header-nav li a:hover {
+  color: #0088a9;
+}

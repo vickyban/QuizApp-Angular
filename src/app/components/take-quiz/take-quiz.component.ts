@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Quiz } from 'src/models/quiz.model';
 import { AppStatus } from 'src/models/AppStatus';
 import { Question } from 'src/models/question.model';
+import { QuestionResult } from 'src/models/QuestionResult.model';
 
 @Component({
   selector: 'app-take-quiz',
@@ -15,7 +16,7 @@ export class TakeQuizComponent implements OnInit {
   status = AppStatus.UploadQuiz;
   questionIndex = 0;
   curQuestion: Question;
-  userResult = [];
+  userResult: QuestionResult[] = [];
 
   constructor() { }
 
@@ -40,12 +41,13 @@ export class TakeQuizComponent implements OnInit {
   }
 
   onNextQuestion(result) {
-    this.userResult.push = result;
+    this.userResult.push(result);
     this.questionIndex++;
     if (this.questionIndex < this.quiz.questionSize)
       this.curQuestion = this.quiz.questions[this.questionIndex];
     else {
       this.status = AppStatus.CompletedQuiz;
+      console.log(this.userResult);
     }
   }
 }

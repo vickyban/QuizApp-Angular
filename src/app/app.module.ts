@@ -9,6 +9,7 @@ import { QuizInfoComponent } from './components/quiz-info/quiz-info.component';
 import { CreateQuestionComponent } from './components/create-question/create-question.component';
 import { DisplayQuestionComponent } from './components/display-question/display-question.component';
 import { TakeQuestionComponent } from './components/take-question/take-question.component';
+import { NavBarComponent } from './layouts/nav-bar/nav-bar.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { TakeQuestionComponent } from './components/take-question/take-question.
     TakeQuizComponent,
     QuizInfoComponent,
     DisplayQuestionComponent,
-    TakeQuestionComponent
+    TakeQuestionComponent,
+    NavBarComponent
   ],
   imports: [
     BrowserModule,

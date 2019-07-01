@@ -16,6 +16,19 @@
   </div>
 
   <div *ngSwitchCase="enumStatus.CompletedQuiz">
-    <p>DOne quiz</p>
+    <h3>Result</h3>
+    <table>
+      <tr>
+        <th>Question</th>
+        <th>Correct Answer</th>
+        <th>Selected Answer</th>
+      </tr>
+      <tr *ngFor="let r of userResult">
+        <td>{{r.question.question}}</td>
+        <td>{{r.question.answer}}</td>
+        <td>{{r.selectedAnswer}}</td>
+      </tr>
+
+    </table>
   </div>
 </div>
