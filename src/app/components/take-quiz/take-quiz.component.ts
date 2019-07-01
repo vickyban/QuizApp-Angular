@@ -50,4 +50,10 @@ export class TakeQuizComponent implements OnInit {
       console.log(this.userResult);
     }
   }
+  getClasses(correct) {
+    return {
+      "div-r-userAns": true,
+      "incorrect": !correct
+    }
+  }
 }

@@ -16,3 +16,20 @@
 .div-quiz-info{
   margin: 10px;
 }
+
+.div-result-box{
+  background: #fff;
+  padding: 7px;
+  margin: 7px 0;
+}
+.div-result-qs{
+  border-bottom:1px solid #f3f3f3;
+}
+.div-r-answer, .div-r-userAns{
+  margin:8px;
+  padding: 5px;
+}
+.incorrect{
+  background: #ff6666;
+  color: #fff;
+}
