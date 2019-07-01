@@ -1,10 +1,11 @@
-<div [ngSwitch]="status">
+<div [ngSwitch]="status" class="center">
   <div *ngSwitchCase="statusEnum.None">
-    <form (submit)="onCreate($event)">
+    <form (submit)="onCreate($event)" id="create-quiz">
+      <h3>Create Quiz</h3>
       <input type="text" placeholder="Author" id="author">
       <input type="text" placeholder="Quiz Name" id="quiz">
       <input type="number" placeholder="number of questions" id="questionSize">
-      <input type="submit" placeholder="Create Quiz">
+      <input type="submit" value="Create Quiz">
     </form>
   </div>
 
