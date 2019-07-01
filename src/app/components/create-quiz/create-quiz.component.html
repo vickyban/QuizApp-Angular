@@ -15,10 +15,13 @@
   </app-create-question>
 
   <div *ngSwitchCase="statusEnum.CreatedQuiz">
-    <div *ngFor="let question of quiz.questions">
-      <app-display-question [question]="question"></app-display-question>
+    <div *ngFor="let question of quiz.questions; let i = index" class="display-question-box">
+      <app-display-question [question]="question" [orderId]="i"></app-display-question>
     </div>
-    <button (click)="onSaveQuiz($event)">Save Quiz</button>
+    <button (click)="onSaveQuiz($event)" id="btn-save-quiz">
+      <img src="https://img.icons8.com/dusk/64/000000/save-as.png">
+      <span>Save Quiz</span>
+    </button>
   </div>
 
 </div>

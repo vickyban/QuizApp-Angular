@@ -1,6 +1,4 @@
-<div>
-  <h4>{{question.question}}</h4>
-  <ul *ngFor="let answer of question.answers; let i = index ">
-    <li>Choice {{i}}: {{answer}}</li>
-  </ul>
-</div>
+<h4>Question {{orderId + 1}}: {{question.question}}</h4>
+<ul>
+  <li *ngFor="let answer of question.answers; let i = index ">Choice {{i}}: {{answer}}</li>
+</ul>

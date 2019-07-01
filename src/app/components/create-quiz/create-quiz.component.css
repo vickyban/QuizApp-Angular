@@ -32,3 +32,32 @@ text-align: center;
 #create-quiz input[type="submit"]:hover{
   background-color: #2e5cf3;
 }
+
+.display-question-box{
+  background: #fff;
+  margin: 10px 0;
+  padding: 5px 10px;
+  box-sizing: border-box;
+}
+
+#btn-save-quiz{
+  padding: 10px 20px;
+  position: relative;
+  width: 125px;
+  height: 30px;
+  margin-top: 25px;
+}
+
+#btn-save-quiz img{
+  width: 40px;
+  position: absolute;
+  top: -15px;
+  left: 7px;
+}
+#btn-save-quiz span{
+  position: absolute;
+  width: 82px;
+  font-weight: bold;
+  top: 6px;
+  left: 37px;
+}

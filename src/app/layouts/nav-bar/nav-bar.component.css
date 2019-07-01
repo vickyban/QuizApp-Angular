@@ -6,9 +6,9 @@ header{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 30px 10%;
+  padding: 14px 10%;
   background: #24252a;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
 }
 
 #header-nav li, #header-nav a{

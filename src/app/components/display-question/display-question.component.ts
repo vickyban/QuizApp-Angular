@@ -8,6 +8,7 @@ import { Question } from 'src/models/question.model';
 })
 export class DisplayQuestionComponent implements OnInit {
   @Input() question: Question;
+  @Input() orderId: number
 
   constructor() { }
 
